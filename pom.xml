@@ -12,7 +12,11 @@
 		<module>2-jpa</module>
 		<module>3-ejb</module>
 		<module>4-jms</module>
-		<module>ejb-client</module>
+		<module>4-jms-client</module>
+		<module>5-jaxws</module>
+		<module>5-jaxws-client</module>
+		<module>6-jaxrs</module>
+		<!--<module>ejb-client</module>-->
 	</modules>
 
   <name>javaee-concepts</name>
