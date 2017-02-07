@@ -1,13 +1,9 @@
 package com.avaloq.javaeeconcepts.jpa;
 
-import java.util.concurrent.TimeUnit;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-
-import org.h2.tools.Server;
 
 import com.avaloq.javaeeconcepts.jpa.data.Author;
 import com.avaloq.javaeeconcepts.jpa.data.Book;
@@ -16,8 +12,8 @@ public class Main {
 
   public static void main(String[] args) throws Exception {
 
-    Server webServer = Server.createWebServer("-webAllowOthers","-webPort","8082").start();
-    Server server = Server.createTcpServer("-tcpAllowOthers","-tcpPort","9092").start();
+    Thread h2WebserverThread = new Thread(new H2WebServerTask());
+    h2WebserverThread.start();
 
     // 1-Creates an instance of book
     Book book = new Book("H2G2", new Author("Douglas Adams"), "The Hitchhiker's Guide to the Galaxy", 12.5F);
@@ -39,9 +35,5 @@ public class Main {
     // 5-Closes the entity manager and the factory
     em.close();
     emf.close();
-
-    TimeUnit.MINUTES.sleep(5);
-    webServer.stop();
-    server.stop();
   }
 }
