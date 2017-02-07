@@ -40,7 +40,7 @@ public class Main {
     em.close();
     emf.close();
 
-    TimeUnit.SECONDS.sleep(120);
+    TimeUnit.MINUTES.sleep(5);
     webServer.stop();
     server.stop();
   }
