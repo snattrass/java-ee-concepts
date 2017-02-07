@@ -17,9 +17,7 @@ public class H2WebServerTask implements Runnable {
       server = Server.createTcpServer("-tcpAllowOthers", "-tcpPort", "9092").start();
       TimeUnit.MINUTES.sleep(5);
     }
-    catch (InterruptedException e) {
-      e.printStackTrace();
-    } catch (SQLException e) {
+    catch (InterruptedException | SQLException e) {
       e.printStackTrace();
     }
     finally {
