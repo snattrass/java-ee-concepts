@@ -14,7 +14,7 @@ public class ApplicationScopedBean {
 
   @PostConstruct
   private void postConstruct() {
-    System.out.println("Creating " + NAME);
+    System.out.println("Calling postConstruct for " + NAME);
   }
 
   public void foo() {}
