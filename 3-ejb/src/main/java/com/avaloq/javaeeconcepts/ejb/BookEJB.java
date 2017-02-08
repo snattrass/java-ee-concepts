@@ -21,6 +21,9 @@ public class BookEJB implements BookEJBRemote {
   @Inject
   private OperationCacheEJB operationCache;
 
+  @Inject
+  private Notifier notifier;
+
   public List<Book> findBooks() {
     TypedQuery<Book> query = em.createNamedQuery("findAll", Book.class);
     System.out.println(query.getResultList().size() + " books found.");
@@ -33,6 +36,7 @@ public class BookEJB implements BookEJBRemote {
     System.out.println("Creating book: " + book);
     em.persist(book);
     operationCache.update("create");
+    notifier.send();
     return book;
   }
 
