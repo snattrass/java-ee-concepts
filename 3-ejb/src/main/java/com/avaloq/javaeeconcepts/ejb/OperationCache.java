@@ -8,7 +8,7 @@ import javax.ejb.Singleton;
 import com.google.common.base.Joiner;
 
 @Singleton
-public class OperationCacheEJB {
+public class OperationCache {
   private Map<String, Integer> operations = new HashMap<>();
 
   public void update (String operation) {

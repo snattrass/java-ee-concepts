@@ -19,7 +19,7 @@ public class BookEJB implements BookEJBRemote {
   private EntityManager em;
 
   @Inject
-  private OperationCacheEJB operationCache;
+  private OperationCache operationCache;
 
   @Inject
   private Notifier notifier;
