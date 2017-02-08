@@ -15,7 +15,7 @@ public class Notifier {
       // some long running task
       TimeUnit.SECONDS.sleep(10);
     } catch (InterruptedException e) {
-      // just swallow, naughty!
+      // it's just demo code, we'll swallow the exception
     }
 
     System.out.println("... sent.");
