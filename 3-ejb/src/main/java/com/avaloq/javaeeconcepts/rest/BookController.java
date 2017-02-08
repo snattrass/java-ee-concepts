@@ -22,7 +22,7 @@ import com.avaloq.javaeeconcepts.ejb.BookEJB;
 public class BookController {
 
   @Inject
-  private BookEJB bookEJB;
+  private BookEJB bookEJB;  // using Local view here
 
   @POST
   public Book create(Book book) {
