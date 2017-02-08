@@ -18,36 +18,36 @@ public class BookEJB implements BookEJBRemote {
   @PersistenceContext
   private EntityManager em;
 
-  @Inject
-  private OperationCache operationCache;
+//  @Inject
+//  private OperationCache operationCache;
 
-  @Inject
-  private Notifier notifier;
+//  @Inject
+//  private Notifier notifier;
 
   public List<Book> findBooks() {
     TypedQuery<Book> query = em.createNamedQuery("findAll", Book.class);
     System.out.println(query.getResultList().size() + " books found.");
 
-    operationCache.update("find");
+//    operationCache.update("find");
     return query.getResultList();
   }
 
   public Book createBook(Book book) {
     System.out.println("Creating book: " + book);
     em.persist(book);
-    operationCache.update("create");
-    notifier.send();
+//    operationCache.update("create");
+//    notifier.send();
     return book;
   }
 
   public Book updateBook(Book book) {
     System.out.println("Updating book: " + book);
-    operationCache.update("update");
+//    operationCache.update("update");
     return em.merge(book);
   }
 
   public void deleteBook(Book book) {
     em.remove(em.merge(book));
-    operationCache.update("delete");
+//    operationCache.update("delete");
   }
 }
