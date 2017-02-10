@@ -65,3 +65,13 @@ yes/no? no
 - @MessageDriven
 - MessageListener
 - Asynchronous nature
+
+## (5) Walkthrough BookOrderProducer 
+- ConnectionFactory and the JNDI binding (in-VM see `standalone-full.xml`)
+- Queue and the JNDI binding
+- JMSConect
+- JMSProducer
+- Send
+
+In Postman
+- Create order

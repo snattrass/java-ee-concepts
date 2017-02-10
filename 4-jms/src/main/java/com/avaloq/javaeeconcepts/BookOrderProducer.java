@@ -26,5 +26,3 @@ public class BookOrderProducer {
     }
   }
 }
-
-//"java:/jms/javaee-concepts/queue/BookOrderQueue"),
