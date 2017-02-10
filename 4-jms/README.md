@@ -1,11 +1,37 @@
-# JBoss Note
+# (4) JMS Notes
 
+A brief (one day) course on some basics of Java EE.
+
+## 1. Demo JBoss standalone-full.xml
 This module required **Messaging** functionality which is not present in `standalone.xml`.  The easiest solution is to use
 `standalone-full.xml`
 
 > `./standalone.sh -c standalone-full.xml`
 
-Create an Application user for the remote connection to JNDI
+## 2. JMS administered objects - create the queue
+Add the queue as an administation object, either via the CLI of the web based admin console.
+```
+$ ./jboss-cli.sh
+
+Unable to read the logging configuration from 'file:/c/dev/bin/jboss/wildfly-10.0.0-vanilla/bin/jboss-cli-logging.properties' (java.io.FileNotFoundException: \c\dev\bin\jboss\wildfly-10.0.0-vanilla\bin\jboss-cli-logging.properties (The system cannot find the path specified))
+INFO  [org.jboss.modules] JBoss Modules version 1.5.1.Final
+INFO  [org.jboss.as.cli.CommandContext] You are disconnected at the moment. Type 'connect' to connect to the server or 'help' for the list of supported commands.
+You are disconnected at the moment. Type 'connect' to connect to the server or 'help' for the list of supported commands.
+[disconnected /] connect localhost:9990
+INFO  [org.xnio] XNIO version 3.3.4.Final
+INFO  [org.xnio.nio] XNIO NIO Implementation Version 3.3.4.Final
+INFO  [org.jboss.remoting] JBoss Remoting version 4.0.18.Final
+[standalone@localhost:9990 /] jms-queue add --queue-address=BookOrderQueue --entries=java:/jms/javaee-concepts/queue/BookOrderQueue,java:/jboss/exported/jms/javaee-concepts/queue/BookOrderQueue
+[standalone@localhost:9990 /] exit
+```
+
+Show the queue in the JBoss UI.
+
+> `http://localhost:9990/console/App.html`
+
+Configuration > Subsystems > Messaging ActiveMQ > Queues/Topics
+
+## 3. JMS administered objects - create the user for remote connection via JNDI and binding lookup
 ```
 $ ./add-user.sh
 
@@ -35,20 +61,7 @@ e.g. for a slave host controller connecting to the master or for a Remoting conn
 yes/no? no
 ```
 
-
-Add the queue as an administation object, either via the CLI of the web based admin console.
-
-```
-$ ./jboss-cli.sh
-
-Unable to read the logging configuration from 'file:/c/dev/bin/jboss/wildfly-10.0.0-vanilla/bin/jboss-cli-logging.properties' (java.io.FileNotFoundException: \c\dev\bin\jboss\wildfly-10.0.0-vanilla\bin\jboss-cli-logging.properties (The system cannot find the path specified))
-INFO  [org.jboss.modules] JBoss Modules version 1.5.1.Final
-INFO  [org.jboss.as.cli.CommandContext] You are disconnected at the moment. Type 'connect' to connect to the server or 'help' for the list of supported commands.
-You are disconnected at the moment. Type 'connect' to connect to the server or 'help' for the list of supported commands.
-[disconnected /] connect localhost:9990
-INFO  [org.xnio] XNIO version 3.3.4.Final
-INFO  [org.xnio.nio] XNIO NIO Implementation Version 3.3.4.Final
-INFO  [org.jboss.remoting] JBoss Remoting version 4.0.18.Final
-[standalone@localhost:9990 /] jms-queue add --queue-address=BookOrderQueue --entries=java:/jms/javaee-concepts/queue/BookOrderQueue,java:/jboss/exported/jms/javaee-concepts/queue/BookOrderQueue
-[standalone@localhost:9990 /] exit
-```
+## (4) Walkthought MDB
+- @MessageDriven
+- MessageListener
+- Asynchronous nature
