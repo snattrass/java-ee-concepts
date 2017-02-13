@@ -13,12 +13,16 @@ public class CardValidator {
 
   @WebMethod
   public boolean validate(CreditCardTO creditCard) {
-    Character lastDigit = creditCard.getNumber().charAt(creditCard.getNumber().length() - 1);
-    int n = Integer.parseInt(lastDigit.toString());
-    return isEven(n);
+    int lastDigit = getLastDigitFromCardNumber(creditCard.getNumber());
+    return isEven(lastDigit);
   }
 
-  private boolean isEven(int n) {
+  private static int getLastDigitFromCardNumber(String cardNumber) {
+    Character lastCharacterFromCardNumber = cardNumber.charAt(cardNumber.length() - 1);
+    return Integer.parseInt(lastCharacterFromCardNumber.toString());
+  }
+
+  private static boolean isEven(int n) {
     return n % 2 == 0;
   }
 }
