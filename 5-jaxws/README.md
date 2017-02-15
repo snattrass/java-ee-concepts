@@ -2,7 +2,7 @@
 
 A brief (one day) course on some basics of Java EE.
 
-## 1 - Walkthought Code
+## 1 - Walkthough Code
 - Walthoguth `CreditCardTO` and `CreditCardValidator`.
 
 ## 2 - Show WSDL (Contract Last) 
