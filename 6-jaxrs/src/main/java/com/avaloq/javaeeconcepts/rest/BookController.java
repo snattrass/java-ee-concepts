@@ -19,7 +19,7 @@ import com.avaloq.javaeeconcepts.ejb.BookDAO;
 
 @RequestScoped
 @Path("/books")
-@Produces("application/json")
+@Produces({"application/json", "application/xml"})
 @Consumes("application/json")
 public class BookController {
 

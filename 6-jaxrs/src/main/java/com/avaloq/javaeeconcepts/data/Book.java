@@ -7,6 +7,11 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import com.google.common.base.MoreObjects;
 
@@ -15,15 +20,25 @@ import com.google.common.base.MoreObjects;
         @NamedQuery(name = "findAll", query = "SELECT b FROM books b"),
         @NamedQuery(name = "findBookH2G2", query = "SELECT b FROM books b WHERE b.title ='H2G2'")
 })
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Book {
   @Id
   @GeneratedValue
+  @XmlAttribute
   private Long id;
+
+  @XmlElement
   private String title;
+
+  @XmlElement
   private Float price;
+
+  @XmlElement
   private String description;
 
   @OneToOne(cascade = CascadeType.PERSIST)
+  @XmlElement
   private Author author;
 
   public Book () {
