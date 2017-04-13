@@ -1,6 +1,6 @@
-# (4) JAX-WS Client Notes
+# 5 - JAX-WS Client Notes
 
-A brief (one day) course on some basics of Java EE.
+A very brief introduction to some of the Java EE concepts used within Avaloq.
 
 ## 1 - Walkthough client and demo
 - Walthoguth pom.xml (wsimport step)
