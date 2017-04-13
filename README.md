@@ -1,4 +1,4 @@
 # Java EE Concepts
 
-A brief (one day) course on some basics of Java EE.
+A very brief introduction to some of the Java EE concepts used within Avaloq.
 
