@@ -4,7 +4,7 @@ A very brief introduction to some of the Java EE concepts used within Avaloq.
 
 
 
-## 1 - List all books
+## 1. List all books
 - GET \<collection\>
 
 - review PostMan
@@ -19,7 +19,7 @@ A very brief introduction to some of the Java EE concepts used within Avaloq.
 
   ​
 
-## 2 - Create a book
+## 2. Create a book
 - POST \<resource\>
 
 - examine the request body.
@@ -36,7 +36,7 @@ A very brief introduction to some of the Java EE concepts used within Avaloq.
 
   ​
 
-## 3 - Get a book
+## 3. Get a book
 - GET \<resource\>
 
 - examine the URL which includes the ID as `/books/id`
@@ -49,7 +49,7 @@ A very brief introduction to some of the Java EE concepts used within Avaloq.
 
   ​
 
-## 4 - Update a book
+## 4. Update a book
 - PUT \<resource\>
 
 - examine the request body
@@ -60,7 +60,7 @@ A very brief introduction to some of the Java EE concepts used within Avaloq.
 
   ​
 
-## 5 - Delete a book
+## 5. Delete a book
 - DELETE \<resource\>
 - examine the URL which includes the ID as s `/books/id=foo`
 - note this is different to the find a book (path param vs query param).

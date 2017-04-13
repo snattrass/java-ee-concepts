@@ -1,12 +1,18 @@
-# (1) CDI Notes
+# 1 - CDI Notes
 
-A brief (one day) course on some basics of Java EE.
+A very brief introduction to some of the Java EE concepts used within Avaloq.
+
+
 
 ## 1. Demo Injection
 Deploy the war as is and view the output.
 
+
+
 ## 2. Demo Interceptors
 Comment out `AppStartupDemoInjector` and comment back in `AppStartupDemoInterceptor` and run, checking the output.
+
+
 
 ## 3. Demo Scoping
 

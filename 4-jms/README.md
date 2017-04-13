@@ -1,15 +1,22 @@
-# (4) JMS Notes
+# 4 - JMS Notes
 
-A brief (one day) course on some basics of Java EE.
+A very brief introduction to some of the Java EE concepts used within Avaloq.
 
-## 1. Demo JBoss standalone-full.xml
-This module required **Messaging** functionality which is not present in `standalone.xml`.  The easiest solution is to use
-`standalone-full.xml`
+
+
+## 1. Demo JBoss `standalone-full.xml`
+This module required **Messaging** functionality which is not present in `standalone.xml`.  The easiest solution is to use `standalone-full.xml`.
 
 > `./standalone.sh -c standalone-full.xml`
 
+
+
 ## 2. JMS administered objects - create the queue
+
 Add the queue as an administation object, either via the CLI of the web based admin console.
+
+
+
 ```
 $ ./jboss-cli.sh
 
@@ -25,13 +32,18 @@ INFO  [org.jboss.remoting] JBoss Remoting version 4.0.18.Final
 [standalone@localhost:9990 /] exit
 ```
 
+
+
 Show the queue in the JBoss UI.
 
 > `http://localhost:9990/console/App.html`
 
-Configuration > Subsystems > Messaging ActiveMQ > Queues/Topics
+*Configuration > Subsystems > Messaging ActiveMQ > Queues/Topics*
 
-## 3. JMS administered objects - create the user for remote connection via JNDI and binding lookup
+
+
+## 3.  JMS administered objects - create the user for remote connection via JNDI and binding lookup
+
 ```
 $ ./add-user.sh
 
@@ -61,17 +73,28 @@ e.g. for a slave host controller connecting to the master or for a Remoting conn
 yes/no? no
 ```
 
-## (4) Walkthought MDB
-- @MessageDriven
-- MessageListener
-- Asynchronous nature
 
-## (5) Walkthrough BookOrderProducer 
-- ConnectionFactory and the JNDI binding (in-VM see `standalone-full.xml`)
+
+## 4. Walk-thought MDB
+
+- Examine `@MessageDriven`, explaining what a *destination* is.
+- Explaing what inheriting from `MessageListener` provides and the *asynchronous nature* of the code.
+
+
+
+## 5. Walk-through `BookOrderProducer` 
+
+- Examine `ConnectionFactory` and the JNDI binding (`in-VM` see `standalone-full.xml`)
+
 - Queue and the JNDI binding
+
 - JMSConect
+
 - JMSProducer
+
 - Send
+
+  ​
 
 In Postman
 - Create order

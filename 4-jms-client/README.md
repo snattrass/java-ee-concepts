@@ -1,8 +1,10 @@
-# (4) JMS Client Notes
+# 4 - JMS Client Notes
 
-A brief (one day) course on some basics of Java EE.
+A very brief introduction to some of the Java EE concepts used within Avaloq.
 
-## (1) Walkthought BookOrderProducer
+
+
+## 1. Walk-thought `BookOrderProducer`
 - JNDI Context
 - Environment
 - ConnectionFactory
