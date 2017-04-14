@@ -9,6 +9,7 @@ A very brief introduction to some of the Java EE concepts used within Avaloq.
 1. CDI
    - Injection
    - Qualifiers
+   - Producers
    - Interceptors
    - Interceptor Chaining
    - Bean Lifecycle
