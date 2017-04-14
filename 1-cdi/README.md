@@ -27,7 +27,24 @@ A very brief introduction to some of the Java EE concepts used within Avaloq.
 
   ​
 
+## 2. Producers
+
+- Examine the `Name` , `EnglishName`, `DeutscheName` and the `@StereotypicalName` qualifier.
+
+- Examine `GreetingService` and *comment in* `name` and `greet()`.
+
+- Edit `AppStartupDemoInjection` to remove the argument from `greetingService.greet()` so that we call our newly commented in `greet()` method in `GreetingService`.
+
+- Deploy the war as is and view the output.
+
+- Multiple enable and disablements of the war will be required to randomly provide either a German name or an English one.
+
+- Talk about Producers as *factories*.
+
+  ​
+
 ## 3. Interceptors
+
 * Examine `AppStartupDemoInterceptor` noting the `GreetingServiceWithInterceptor`.
 * Examine `@Interceptor` and the `BeforeAndAfterLoggingInterceptor` which is on a method.
 * In the `BeforeAndAfterLoggingInterceptor` note the `@AroundInvoke` and the `context`.
