@@ -15,4 +15,4 @@ A very brief introduction to some of the Java EE concepts used within Avaloq.
 
 - Examine `insert.sql` and how it fits into `persistence.xml`.
 - Examine `Main`, how we're getting a reference to the `EntityManagerFactory`, `EntityManager` and transactions.
-- Demo the H2 Browser `http://localhost:8082`.
+- Run `Main` and demo the H2 Browser `http://localhost:8082`.
