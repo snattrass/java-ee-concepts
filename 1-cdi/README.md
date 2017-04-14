@@ -11,6 +11,8 @@ A very brief introduction to some of the Java EE concepts used within Avaloq.
 
 * Explains `@Startup`, `@Singleton` and `@PostConstruct`.
 
+* Discuss `beans.xml`.
+
   ​
 
 ##  2. Qualifiers
