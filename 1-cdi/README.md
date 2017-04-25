@@ -5,7 +5,7 @@ A very brief introduction to some of the Java EE concepts used within Avaloq.
 
 
 ## 1. Injection
-* Deploy the war as is and view the output.
+* Deploy the war as is and view the output (`INFO	[stdout]	Hello Simon`)
 
 * Explore `AppStartupDemoInjection` , the `@Inject` of `GreetingService` which injects the `@Greeting` interface.
 
@@ -46,9 +46,14 @@ A very brief introduction to some of the Java EE concepts used within Avaloq.
 ## 3. Interceptors
 
 * Examine `AppStartupDemoInterceptor` noting the `GreetingServiceWithInterceptor`.
+
 * Examine `@Interceptor` and the `BeforeAndAfterLoggingInterceptor` which is on a method.
+
 * In the `BeforeAndAfterLoggingInterceptor` note the `@AroundInvoke` and the `context`.
+
 * Comment out `AppStartupDemoInjector` and comment back in `AppStartupDemoInterceptor` rebuild, reploy and view the output.
+
+  ​
 
 
 
@@ -61,6 +66,8 @@ A very brief introduction to some of the Java EE concepts used within Avaloq.
   ``@Interceptor({SecurityInterceptor.class, BeforeAndAfterLoggingInterceptor.class})``.
 
 - Rebuild, reploy and view the output.
+
+  ​
 
 
 
@@ -92,7 +99,7 @@ A very brief introduction to some of the Java EE concepts used within Avaloq.
 
 * Rebuild and redeploy.
 
-* Navigate to `http://localhost:8080/javaee-concepts-cdi/rest/scope/application` and then observe the output.  Repeat multiple times.
+* Navigate to `http://localhost:8080/javaee-concepts-cdi/rest/scope/application` and then observe the output.  Repeat multiple times.  Repeat from another browser.
 
 * Navigate to `http://localhost:8080/javaee-concepts-cdi/rest/scope/request`and observe the output again repeating multiple times.
 
