@@ -1,11 +1,16 @@
 package com.avaloq.javaeeconcepts.jpa.startup;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
 import com.avaloq.javaeeconcepts.jpa.data.Address;
 import com.avaloq.javaeeconcepts.jpa.data.Author;
@@ -21,27 +26,57 @@ public class AppStartup {
 
   @PostConstruct
   public void postConstruct() {
-    findBooks();
+    findBookByNamedQuery();
 
     Author georgeOrwell = new Author("George Orwell", Genre.SCI_FI);
     georgeOrwell.setAddress(new Address("Jura", "Scotland"));
     Book book = new Book("1984", georgeOrwell, "Dystopian political sci-fi", 6.97F);
     createBook(book);
 
-    findBooks();
+    findBookByNamedQuery();
+    findBooksByCriteriaQuery();
+    findBooksByJpqlQuery();
+    findBooksByNativeQuery();
   }
 
-  public void findBooks() {
-    TypedQuery<Book> query = em.createNamedQuery("findAll", Book.class);
-    System.out.println(query.getResultList().size() + " books found.");
+  private void createBook(Book book) {
+    System.out.println("Creating book: " + book);
+    em.persist(book);
+  }
 
-    for (Book book: query.getResultList()) {
+  private void findBookByNamedQuery() {
+    TypedQuery<Book> query = em.createNamedQuery("findAll", Book.class);
+    List<Book> books = query.getResultList();
+
+    System.out.println("Named Query returns " + books.size() + "books");
+  }
+
+  private void findBooksByNativeQuery() {
+    List<Book> books = em.createNativeQuery("SELECT * FROM BOOKS", Book.class).getResultList();
+    System.out.println("Native Query returns " + books.size() + " books");
+  }
+
+  private void findBooksByJpqlQuery() {
+    List<Book> books = em.createQuery("SELECT b FROM books b WHERE b.author.genre = '" + Genre.SCI_FI + "'", Book.class).getResultList();
+    System.out.println("JPQL Query returns " + books.size() + " books");
+
+    for (Book book: books) {
       System.out.println("Found book: " + book);
     }
   }
 
-  public void createBook(Book book) {
-    System.out.println("Creating book: " + book);
-    em.persist(book);
+  private void findBooksByCriteriaQuery() {
+    CriteriaBuilder builder = em.getCriteriaBuilder();
+    CriteriaQuery<Book> bookQuery = builder.createQuery(Book.class);
+    Root<Book> b = bookQuery.from(Book.class);
+    bookQuery.select(b).where(builder.equal(b.get("author").get("name"),  "George Orwell"));
+    List<Book> books = em.createQuery(bookQuery).getResultList();
+    System.out.println("Criteria Query returns " + books.size() + " books");
+
+    for (Book book: books) {
+      System.out.println("Found book: " + book);
+    }
   }
+
+
 }
