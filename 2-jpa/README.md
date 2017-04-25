@@ -8,7 +8,7 @@ A very brief introduction to some of the Java EE concepts used within Avaloq.
 
 
 
-### 2. Walk-through Entities
+### 1. Walk-through Entities
 
 * Examine `Author` and `Book`.
 * Examine  `persistence.xml`.
