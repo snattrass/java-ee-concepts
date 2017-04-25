@@ -12,7 +12,7 @@ import com.google.common.base.MoreObjects;
 
 @Entity(name = "books")
 @NamedQueries({
-        @NamedQuery(name = "findAdd", query = "SELECT b FROM books b"),
+        @NamedQuery(name = "findAll", query = "SELECT b FROM books b"),
         @NamedQuery(name = "findBookH2G2", query = "SELECT b FROM books b WHERE b.title ='H2G2'")
 })
 public class Book {
