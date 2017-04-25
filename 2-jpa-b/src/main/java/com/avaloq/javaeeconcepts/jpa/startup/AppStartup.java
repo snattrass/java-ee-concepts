@@ -7,8 +7,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
+import com.avaloq.javaeeconcepts.jpa.data.Address;
 import com.avaloq.javaeeconcepts.jpa.data.Author;
 import com.avaloq.javaeeconcepts.jpa.data.Book;
+import com.avaloq.javaeeconcepts.jpa.data.Genre;
 
 @Startup
 @Singleton
@@ -21,7 +23,9 @@ public class AppStartup {
   public void postConstruct() {
     findBooks();
 
-    Book book = new Book("H2G2", new Author("Douglas Adams"), "The Hitchhiker's Guide to the Galaxy", 12.5F);
+    Author georgeOrwell = new Author("George Orwell", Genre.SCI_FI);
+    georgeOrwell.setAddress(new Address("Jura", "Scotland"));
+    Book book = new Book("1984", georgeOrwell, "Dystopian political sci-fi", 6.97F);
     createBook(book);
 
     findBooks();

@@ -1,23 +1,23 @@
 package com.avaloq.javaeeconcepts.jpa.data;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 import com.google.common.base.MoreObjects;
 
 @Entity(name = "authors")
-public class Author { // extends Person {
-  @Id
-  @GeneratedValue
-  private Long id;
-  private String name;
+public class Author extends Person {
+
+  @Enumerated(EnumType.STRING)
+  private Genre genre;
 
   public Author() {
   }
 
-  public Author(String name) {
+  public Author(String name, Genre genre) {
     this.name = name;
+    this.genre = genre;
   }
 
   @Override
@@ -25,6 +25,8 @@ public class Author { // extends Person {
     return MoreObjects.toStringHelper(this)
             .add("id", id)
             .add("name", name)
+            .add("genre", genre)
+            .add("address", address)
             .toString();
   }
 }
