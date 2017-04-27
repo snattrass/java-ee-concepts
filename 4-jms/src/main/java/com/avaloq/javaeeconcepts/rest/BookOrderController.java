@@ -21,7 +21,13 @@ public class BookOrderController {
 
   @POST
   public BookOrderTO createOrder() {
-    BookOrderTO bookOrder = new BookOrderTO(321L, new Date(), "Simon Nattrass", 999.00F);
+    BookOrderTO bookOrder = BookOrderTO.newBuilder()
+            .orderId(321L)
+            .creationDate(new Date())
+            .customerName("Simon Nattrass")
+            .totalAmount(999.0F)
+            .build();
+
     bookOrderProducer.sendOrder(bookOrder);
     return bookOrder;
   }
