@@ -11,3 +11,4 @@ A very brief introduction to some of the Java EE concepts used within Avaloq.
 - Destination/Queue
 - JMSContext
 - JMSProducer
+- try-with-resources

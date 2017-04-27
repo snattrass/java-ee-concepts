@@ -15,7 +15,12 @@ import com.avaloq.javaeeconcepts.to.BookOrderTO;
 public class BoodOrderProducer {
 
   public static void main(String[] args) throws NamingException, IOException {
-    BookOrderTO bookOrder = new BookOrderTO(123L, new Date(), "Simon Nattrass", 23.00F);
+    BookOrderTO bookOrder = BookOrderTO.newBuilder()
+            .orderId(123L)
+            .creationDate(new Date())
+            .customerName("Simon Nattrass")
+            .totalAmount(23.00F)
+            .build();
 
     // grab the JNDI context
     Context jndiContext = Environment.getContext();
