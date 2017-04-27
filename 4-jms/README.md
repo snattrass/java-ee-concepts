@@ -92,6 +92,8 @@ yes/no? no
 
 - JMSProducer
 
+- Look at `BookOrderTO` explaining why we have these *Transfer Objects* and also explain the usage of the *Builder* pattern (see `BookOrderController` for usage.)
+
 - Send
 
   ​
