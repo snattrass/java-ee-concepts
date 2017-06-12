@@ -9,13 +9,13 @@
 
 	<modules>
 		<module>1-cdi</module>
-		<module>2-jpa</module>
-		<module>2-jpa-b</module>
+		<module>2a-jpa</module>
+		<module>2b-jpa-javaee</module>
 		<module>3-ejb</module>
-		<module>4-jms</module>
-		<module>4-jms-client</module>
-		<module>5-jaxws</module>
-		<module>5-jaxws-client</module>
+		<module>4a-jms</module>
+		<module>4b-jms-client</module>
+		<module>5a-jaxws</module>
+		<module>5b-jaxws-client</module>
 		<module>6-jaxrs</module>
 		<!--<module>ejb-client</module>-->
 	</modules>
