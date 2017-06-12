@@ -10,7 +10,7 @@
 	<artifactId>jaxrs</artifactId>
 	<packaging>war</packaging>
 
-	<name>6-jaxrs</name>
+	<name>jaxrs</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

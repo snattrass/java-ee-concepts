@@ -10,7 +10,7 @@
 	<artifactId>cdi</artifactId>
 	<packaging>war</packaging>
 
-	<name>1-cdi</name>
+	<name>cdi</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

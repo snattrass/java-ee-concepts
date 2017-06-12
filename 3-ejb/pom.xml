@@ -10,7 +10,7 @@
 	<artifactId>ejb</artifactId>
 	<packaging>war</packaging>
 
-	<name>3-ejb</name>
+	<name>ejb</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

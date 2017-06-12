@@ -10,7 +10,7 @@
 	<artifactId>jaxws-client</artifactId>
 	<packaging>jar</packaging>
 
-	<name>5-jaxws-client</name>
+	<name>jaxws-client</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

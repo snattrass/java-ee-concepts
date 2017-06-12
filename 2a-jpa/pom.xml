@@ -10,7 +10,7 @@
 	<artifactId>jpa</artifactId>
 	<packaging>jar</packaging>
 
-	<name>2-jpa</name>
+	<name>jpa-javase</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

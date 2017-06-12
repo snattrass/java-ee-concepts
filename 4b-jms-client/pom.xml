@@ -10,7 +10,7 @@
 	<artifactId>jms-client</artifactId>
 	<packaging>jar</packaging>
 
-	<name>4-jms-client</name>
+	<name>jms-client</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

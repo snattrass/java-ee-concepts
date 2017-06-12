@@ -10,7 +10,7 @@
 	<artifactId>jpa-b</artifactId>
 	<packaging>war</packaging>
 
-	<name>2-jpa-b</name>
+	<name>jpa-javaee</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -10,7 +10,7 @@
 	<artifactId>jaxws</artifactId>
 	<packaging>war</packaging>
 
-	<name>5-jaxws</name>
+	<name>jaxws</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

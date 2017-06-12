@@ -10,7 +10,7 @@
 	<artifactId>jms</artifactId>
 	<packaging>war</packaging>
 
-	<name>4-jms</name>
+	<name>jms</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
