@@ -7,10 +7,9 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>jpa-b</artifactId>
+	<artifactId>jpa</artifactId>
+	<name>jpa</name>
 	<packaging>war</packaging>
-
-	<name>jpa-javaee</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

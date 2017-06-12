@@ -8,9 +8,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>cdi</artifactId>
-	<packaging>war</packaging>
-
 	<name>cdi</name>
+	<packaging>war</packaging>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
