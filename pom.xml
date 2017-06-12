@@ -10,6 +10,7 @@
 	<modules>
 		<module>1-cdi</module>
 		<module>2-jpa</module>
+		<module>2-jpa-b</module>
 		<module>3-ejb</module>
 		<module>4-jms</module>
 		<module>4-jms-client</module>
